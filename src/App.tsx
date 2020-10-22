@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 import Login from './features/login/login';
+import {Route, Router, Switch} from "react-router-dom";
+import Dashboard from './features/dashboard/dashboard';
+import { ConnectedRouter } from 'connected-react-router';
+import { history } from "./helpers/rootStore";
 
 function App() {
   return (
@@ -8,7 +12,12 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-md-4 offset-md-4">
-            <Login/>
+            <ConnectedRouter history={history} >
+              <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/" component={Dashboard} />
+              </Switch>
+            </ConnectedRouter>
           </div>
         </div>
       </div>
