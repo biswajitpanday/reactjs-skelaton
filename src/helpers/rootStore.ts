@@ -15,4 +15,4 @@ export const store = configureStore({
     middleware: [...getDefaultMiddleware(), routerMiddleware(history)]
 })
 
-//export type IReducerState = ReturnType<typeof store.getState>;
+export type IReducerState = ReturnType<typeof store.getState>;

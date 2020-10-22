@@ -8,3 +8,7 @@ export interface ILoginModel {
 export interface ILoginStateModel extends IBaseState, ILoginModel {
     isFormValid: boolean;
 }
+
+export interface ILoginProps extends IBaseState {
+    loginRequestAction: (loginModel: ILoginModel) => void;
+}

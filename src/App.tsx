@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Login from './features/login/login';
-import {Route, Router, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import Dashboard from './features/dashboard/dashboard';
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from "./helpers/rootStore";
+import { Login } from './features/login/login';
 
 function App() {
   return (
