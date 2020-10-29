@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { ILoginStateModel, ILoginProps, ILoginModel } from './models';
 import { defaultLoginState, login } from './store';
 import { connect } from "react-redux";
-import { IReducerState } from "../../helpers"
+import { IReducerState } from "../../helpers/rootStore"
 
 export class LoginComponent extends Component<ILoginProps, ILoginStateModel> {
 
