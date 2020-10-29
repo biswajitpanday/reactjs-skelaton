@@ -4,7 +4,7 @@ export interface IRegistrationModel {
     fullName: string;
     username: string;
     password: string;
-    dateOfBirth: Date;
+    dateOfBirth: string;
     gender: string;
     country: string;
     agreement: boolean;

@@ -18,7 +18,7 @@ export class RegistrationComponent extends Component<IRegistrationProps, IRegist
         this.setState({...model})
     }
 
-    handleDateChange = (date: Date) => {
+    handleDateChange = (date: any) => {
         console.log(date);
         const model = {
             ...this.state,
@@ -32,27 +32,22 @@ export class RegistrationComponent extends Component<IRegistrationProps, IRegist
             <div className="card mt-md-5">
                 <div className="card-body">
                     <form>
-                    <div className="form-group">
-                            <label htmlFor="exampleInputName">Full Name</label>
+                        <div className="form-group">
+                            <label htmlFor="inputName">Full Name</label>
                             <input type="text" name="fullName" className="form-control" id="exampleInputFullName" aria-describedby="fullNameHelp" placeholder="Enter FullName" value={this.state.fullName} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
-                            <input type="email" name="username" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={this.state.username} onChange={this.handleInputChange} />
+                            <label htmlFor="inputEmail">Email address</label>
+                            <input type="email" name="username" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" value={this.state.username} onChange={this.handleInputChange} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputDob">Date Of Birth</label>
-                            {/* <input type="text" name="dob" className="form-control" id="exampleInputDob" placeholder="Date of Birth" value={this.state.dateOfBirth} onChange={this.handleInputChange} /> */}
-                            <DatePicker className="form-control" id="exampleInputDob" name="dob" selected={this.state.dateOfBirth} onChange={(date: Date) => this.handleDateChange(date)} />
+                            <label htmlFor="inputDob">Date Of Birth</label>
+                            <DatePicker className="form-control" id="inputDob" name="dob" selected={new Date(this.state.dateOfBirth)} value={this.state.dateOfBirth} onChange={(date: any) => this.handleDateChange(date)} />
                         </div>
-                        
-                        
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Password</label>
-                            <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} />
+                            <label htmlFor="inputPassword">Password</label>
+                            <input type="password" name="password" className="form-control" id="inputPassword" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} />
                         </div>
-                        
-
                         <button type="submit" className="btn btn-primary" onClick={(e) => {e.preventDefault(); this.props.registrationRequestAction(this.state)}}>Submit</button>
                     </form>
                 </div>

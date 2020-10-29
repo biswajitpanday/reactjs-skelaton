@@ -1,6 +1,7 @@
 import { IRegistrationModel, IRegistrationStateModel } from './models';
 import { Dispatch } from 'redux';
 import { createSlice } from '@reduxjs/toolkit';
+import moment from 'moment';
 
 export const defaultRegistrationState: IRegistrationStateModel = {
     fullName: '',
@@ -8,7 +9,7 @@ export const defaultRegistrationState: IRegistrationStateModel = {
     password: '',
     country: '',
     gender: '',
-    dateOfBirth: new Date(),
+    dateOfBirth: moment(new Date()).format("MM/DD/YYYY"),
     agreement: false,
     isBusy: false,
     errorMessage: '',
