@@ -5,6 +5,8 @@ import Dashboard from './features/dashboard/dashboard';
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from "./helpers/rootStore";
 import { Login } from './features/login/login';
+import { Registration } from './features/registration/registration';
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
             <ConnectedRouter history={history} >
               <Switch>
                 <Route path="/login" component={Login} />
+                <Route path="/registration" component={Registration} />
                 <Route path="/" component={Dashboard} />
               </Switch>
             </ConnectedRouter>
